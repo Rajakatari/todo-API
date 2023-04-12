@@ -1,0 +1,39 @@
+get http://localhost:3000/todos/?status=TO%20DO
+
+###
+get http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+###
+get http://localhost:3000/todos/?search_q=Play
+
+###
+get http://localhost:3000/todos/12/
+###
+
+post http://localhost:3000/todos/ 
+Content-Type: application/json
+
+{
+   "id": 12,
+   "todo": "Play vollyball",
+   "priority": "LOW",
+   "status": "IN PROGRESS"
+}
+
+###
+put http://localhost:3000/todos/12/ 
+Content-Type: application/json 
+
+{
+       "status": "DONE"
+    }
+###
+put http://localhost:3000/todos/11/ 
+Content-Type: application/json 
+
+    {
+        "todo" : "Learn React"
+    }
+
+ 
+###
+DELETE http://localhost:3000/todos/11/
